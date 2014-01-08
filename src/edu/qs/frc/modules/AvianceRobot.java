@@ -4,7 +4,6 @@
  */
 package edu.qs.frc.modules;
 
-import com.sun.squawk.Isolate;
 import edu.qs.frc.threading.AvianceThread;
 import edu.qs.frc.threading.AvianceThreadInterruptedException;
 import edu.qs.frc.threading.AvianceThreadManager;
@@ -23,7 +22,6 @@ public final class AvianceRobot extends AvianceThread{
     public static DriverStation driverStation= DriverStation.getInstance();
     private Watchdog watchdog = Watchdog.getInstance();
     private AutonomousRoutinePoller poller;
-    private AvianceGeneralShooter shooter;
     
     public static final String systemThreadGroup = "roboxsysthreads";
     public static final String teleopThreads = "teleoperatedthreads";
@@ -134,9 +132,9 @@ public final class AvianceRobot extends AvianceThread{
             
              // and over here is where we launch another Isolate program that is very simple and guaranteed to work in worse case senario
         
-            Isolate failsafe = new Isolate("edu.qs.frc.FailSafeRobot", new String[0], null, Isolate.currentIsolate().getParentSuiteSourceURI());
-            failsafe.start();
-            failsafe.join();
+            //Isolate failsafe = new Isolate("edu.qs.frc.FailSafeRobot", new String[0], null, Isolate.currentIsolate().getParentSuiteSourceURI());
+            //failsafe.start();
+            //failsafe.join();
             
         }
     }

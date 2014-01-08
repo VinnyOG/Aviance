@@ -4,8 +4,6 @@
  */
 package edu.qs.frc.hardware;
 
-import InsightLT.InsightLT;
-import edu.wpi.first.wpilibj.ADXL345_I2C;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWM;
@@ -60,7 +58,6 @@ private static boolean currentButton = false;
     public static final Encoder encoder_back_left = new Encoder(5,6);
     public static final Encoder encoder_back_right = new Encoder(7,8);
        public static final int gyro_port = 1;
-    public static final InsightLT display = new InsightLT(InsightLT.TWO_ONE_LINE_ZONES); // InsightLT Constructor
     public static final String Active ="Active";
     public static final String Diasbled = "Disabled";
     
@@ -86,27 +83,5 @@ private static boolean currentButton = false;
         encoder_back_left.start();    //or maybe we should do this in its own module? that works
         encoder_back_right.start();
      
-    }
-      public static boolean toggleJoystick1(int buttonnumber){
-      previousButton = currentButton;
-currentButton = Hardware.joystick1.getRawButton(buttonnumber);
-
-if (currentButton && !previousButton) 
-{motorStatus = motorStatus ? false : true;
-
-}
-
-return motorStatus;
-    }
-        public static boolean toggleJoystick2(int buttonnumber){
-      previousButton = currentButton;
-currentButton = Hardware.joystick2.getRawButton(buttonnumber);
-
-if (currentButton && !previousButton) 
-{motorStatus = motorStatus ? false : true;
-
-}
-
-return motorStatus;
     }
 }
