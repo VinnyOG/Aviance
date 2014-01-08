@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.Talon;
 
 /**
  *
- * @author Darvin
+ * @author pawel
  */
 public class Hardware {
     // hardware will be accessed depending on type
