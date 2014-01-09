@@ -24,6 +24,9 @@ public class DriveYoli {
       
       DoubleSolenoid piston = new DoubleSolenoid(1, 2);
       
+      boolean pressed1 = rightjoy.getRawButton(1);
+      boolean pressed2 = rightjoy.getRawButton(2);
+      
       
       protected void startup() {
           System.out.println("Starting up robot");
@@ -41,9 +44,14 @@ public class DriveYoli {
         backright.set(leftval);
         backleft.set(leftval);
         
-        DoubleSolenoid.Value pistonval = piston.get();
+        if(pressed1) {
+            piston.set(DoubleSolenoid.Value.kForward);
+        }
         
-        piston.set(pistonval);
+         if(pressed2) {
+            piston.set(DoubleSolenoid.Value.kReverse);
+        }
+        
       }
       
       protected void reset() {
