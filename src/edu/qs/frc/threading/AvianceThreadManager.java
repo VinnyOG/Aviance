@@ -20,7 +20,7 @@ public class AvianceThreadManager {
      * The single instance of this class
      */
     private static final AvianceThreadManager managerInstance = new AvianceThreadManager();
-    private Hashtable threadGroups = new Hashtable(); // <String, Vector>
+    private final Hashtable threadGroups = new Hashtable(); // <String, Vector>
     
     /**Interrupts all threads in a given thread group
      * 

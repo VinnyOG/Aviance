@@ -84,7 +84,7 @@ public class AvianceThread extends Thread{
         }
     }
     
-    protected void iteration(){
+    protected void iteration() throws AvianceThreadInterruptedException{
         
     }
     

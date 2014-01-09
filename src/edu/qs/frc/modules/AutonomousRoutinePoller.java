@@ -1,7 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this template, choose Tools | Templates
+* and open the template in the editor.
+*/
 package edu.qs.frc.modules;
 
 import edu.qs.frc.hardware.Hardware;
@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  * @author Darvin
- * 
+ *
  * AvianceRobot class adds this in manually, this class is NOT responsible for managing its threadgroup membership
  */
 public class AutonomousRoutinePoller extends AvianceThread{
@@ -39,7 +39,7 @@ public class AutonomousRoutinePoller extends AvianceThread{
     protected void iteration(){
         
         
-                try{
+        try{
             System.out.println("Poller on!");
             
             while(true){
@@ -50,9 +50,9 @@ public class AutonomousRoutinePoller extends AvianceThread{
                 }
                 
                 synchronized(intLock) {
-                     
+                    
                     if (value != routine) System.out.println("Autonomous Routine changed: " + value);
-                     SmartDashboard.putNumber("Autonomous Routine", value);
+                    SmartDashboard.putNumber("Autonomous Routine", value);
                     routine = value;
                 }
                 
@@ -63,24 +63,24 @@ public class AutonomousRoutinePoller extends AvianceThread{
             interrupted = false; //every module needs this in its catch clause for interruted exception otherwise the thread will NOT start again
         }
     }
-        
+    
 //        for(int i = 0; i < buttons.length; i++)
 //            if(joy.getRawButton(buttons[i])) //if the button in a particular slot is pressed
 //                value = i + 1;  //then the routine is set to that slot + 1 (since routines count from 1 not 0) ok
-//                
+//
 //        synchronized(intLock) {
 //            value = (int) SmartDashboard.getNumber("Autonomous Routine");
 //            if (value != routine){ System.out.println("Autonomous Routine changed: " + value);
 //                SmartDashboard.putNumber("Autonomous Routine", value);
 //            }
 //            routine = value;
-//            
+//
 //        }
- //   }
+    //   }
     
     
-//   
+//
 //    public void run(){
-
+    
     
 }
