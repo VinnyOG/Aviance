@@ -3,13 +3,14 @@
 
     import edu.wpi.first.wpilibj.Jaguar;
     import edu.wpi.first.wpilibj.Joystick;
-    import mainframe.AvianceThread;
+import edu.wpi.first.wpilibj.Timer;
 
     /**
      *
      * @author luzono
      */
     public class DriveOran extends GyroOran {
+        //Credit to Yoli, Marc, Cory, Lucas for helping to write code.
 
            Joystick left = new Joystick(1);
            Joystick right = new Joystick(2);
@@ -19,7 +20,7 @@
             Jaguar fl = new Jaguar(3);
             Jaguar fr = new Jaguar(4);
             
-            
+            double delay = 1;
             
             
             public void startup(){
@@ -55,6 +56,17 @@
                         br.set(-1 * rightvalue);
                         fr.set(-1 * rightvalue);   
                         }
+                        
+                        Timer.delay(delay);
+                        if (tLeft) {
+                            leftvalue = -0.5;
+                            rightvalue = 0.5;
+                        
+                            bl.set(leftvalue);
+                            fl.set(leftvalue);
+                            br.set(-1 * rightvalue);
+                            fr.set(-1 * rightvalue);
+                        }
                     }
 
                     if(tRight) {
@@ -67,6 +79,17 @@
                         fl.set(leftvalue);
                         br.set(-1 * rightvalue);
                         fr.set(-1 * rightvalue);
+                        }
+                        
+                        Timer.delay(delay);
+                        if (tRight) {
+                            leftvalue = 0.5;
+                            rightvalue = -0.5;
+
+                            bl.set(leftvalue);
+                            fl.set(leftvalue);
+                            br.set(-1 * rightvalue);
+                            fr.set(-1 * rightvalue);
                         }
                     }
 

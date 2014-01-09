@@ -7,23 +7,25 @@
 package modules.yoli;
 
 import edu.wpi.first.wpilibj.Gyro;
+import mainframe.AvianceThread;
 
 /**
  *
  * @author meydany
  */
-public class GyroYoli { //CREDITS GO TO ORAN FOR WRITING- I NEED THIS CODE FOR MY PACKAGE
+public class GyroYoli extends AvianceThread { //CREDITS GO TO ORAN FOR WRITING- I NEED THIS CODE FOR MY PACKAGE
     
     private Gyro direction = new Gyro(1);
     double angle;
     
     public void startup(){
         direction.reset();
+        System.out.println("Starting up robot...");
     }
     
     protected void iteration(){
         angle = direction.getAngle();
-        if (angle>=360){
+        while(angle>=360){
             angle -= 360;
         }
     }

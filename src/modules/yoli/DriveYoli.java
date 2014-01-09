@@ -2,6 +2,7 @@ package modules.yoli;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  *
@@ -18,22 +19,71 @@ public class DriveYoli extends GyroYoli {
       //Creating joysticks
       public Joystick rightjoy = new Joystick(1);
       public Joystick leftjoy = new Joystick(2);
-            
-      protected void startup() {
-          System.out.println("Starting up robot");
-      }
-        
+               
       protected void iteration() {
       
         double rightval = rightjoy.getY();
         double leftval = leftjoy.getY();
+        
+        boolean tLeft = rightjoy.getRawButton(3);
+        boolean tRight = rightjoy.getRawButton(4);
 
         //setting speed
         frontright.set(-1 * rightval);
-        frontleft.set(-1 * rightval);
+        backright.set(-1 * rightval);
 
-        backright.set(leftval);
+        frontleft.set(leftval);
         backleft.set(leftval);
+        
+        if(tLeft) {
+            double less = angle + 45;
+            
+            while (angle < less){
+                leftval = -1;
+                rightval = 1;   
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval);   
+             }
+            Timer.delay(1);
+            
+            if(tLeft) {
+                leftval = -1;
+                rightval = 1;   
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval); 
+            }
+        }
+
+        if(tRight) {
+            double less1 = angle + 45;
+            
+            while (angle < less1){
+                leftval = 1;
+                rightval = -1;
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval);
+             }
+            Timer.delay(1);
+            
+            if(tLeft) {
+                leftval = 1;
+                rightval = -1;
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval);
+            }
+         }
        
       }
       
