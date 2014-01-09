@@ -4,6 +4,7 @@
  */
 package edu.qs.frc.modules;
 
+import com.sun.squawk.Isolate;
 import edu.qs.frc.threading.AvianceThread;
 import edu.qs.frc.threading.AvianceThreadInterruptedException;
 import edu.qs.frc.threading.AvianceThreadManager;

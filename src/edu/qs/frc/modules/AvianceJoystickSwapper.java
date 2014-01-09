@@ -23,7 +23,7 @@ public class AvianceJoystickSwapper extends AvianceThread{
     private boolean swapped = false;
     private double lastSwap = Timer.getFPGATimestamp();
     private double restTime = 1; // if it's double then it makes sense to be seconds 
-    private int swapButton = Hardware.joystickSwapButton;
+    private int swapButton = 6;
     
     protected void iteration(){// youve beeen infinitely looped, yup it's supposed to
         if((Hardware.joystick1.getRawButton(swapButton) || Hardware.joystick2.getRawButton(swapButton))
