@@ -14,7 +14,7 @@ import mainframe.AvianceThread;
  * @author luzono
  */
 public class GyroOran extends AvianceThread{
-    Gyro direction = new Gyro(1);
+    private Gyro direction = new Gyro(1);
     double angle;
     
     public void startup(){
@@ -22,7 +22,12 @@ public class GyroOran extends AvianceThread{
     }
     protected void iteration(){
         angle = direction.getAngle();
-        
+        if (angle>360){
+            angle -= 360;
+        }
     }
     
+    public double getAngle(){
+        return angle;
+    }
 }
