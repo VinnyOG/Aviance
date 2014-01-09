@@ -3,12 +3,13 @@ package modules;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
+import mainframe.AvianceThread;
 
 /**
  *
  * @author luzono
  */
-public class DriveOran {
+public class DriveOran extends AvianceThread {
 
        Joystick left = new Joystick(1);
        Joystick right = new Joystick(2);
