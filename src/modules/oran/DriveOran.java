@@ -9,7 +9,7 @@
      *
      * @author luzono
      */
-    public class DriveOran extends AvianceThread {
+    public class DriveOran extends GyroOran {
 
            Joystick left = new Joystick(1);
            Joystick right = new Joystick(2);
@@ -18,7 +18,10 @@
             Jaguar br = new Jaguar(2);
             Jaguar fl = new Jaguar(3);
             Jaguar fr = new Jaguar(4);
-
+            
+            
+            
+            
             public void startup(){
 
             }
@@ -38,9 +41,12 @@
                     fl.set(leftvalue);
                     br.set(-1 * rightvalue);
                     fr.set(-1 * rightvalue);
-
+                    
+                    
+                    
                     if(tLeft) {
-                        
+                        double less = angle + 45;
+                        while (angle < less){
                         leftvalue = -1;
                         rightvalue = 1;   
                         
@@ -48,9 +54,12 @@
                         fl.set(leftvalue);
                         br.set(-1 * rightvalue);
                         fr.set(-1 * rightvalue);   
+                        }
                     }
 
                     if(tRight) {
+                        double less1 = angle + 45;
+                        while (angle < less1){
                         leftvalue = 1;
                         rightvalue = -1;
                         
@@ -58,6 +67,7 @@
                         fl.set(leftvalue);
                         br.set(-1 * rightvalue);
                         fr.set(-1 * rightvalue);
+                        }
                     }
 
            }
