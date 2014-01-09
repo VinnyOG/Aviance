@@ -3,7 +3,7 @@ package modules;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 /**
  *
  * @author luzono
@@ -17,19 +17,16 @@ public class DriveOran {
         Talon bl = new Talon(2);
         Talon fr = new Talon(3);
         Talon br = new Talon(4);
-        DoubleSolenoid sol = new DoubleSolenoid (1,2);
         
-         
         public void startup(){
         
         }
         
-        
+       
         protected void iteration(){
                 double leftvalue;
                 double rightvalue;
-                //sol.set();
-            
+                    
                 leftvalue = left.getY();
                 rightvalue = right.getY();
 

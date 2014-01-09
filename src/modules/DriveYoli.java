@@ -2,9 +2,6 @@ package modules;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-
-
 
 /**
  *
@@ -19,15 +16,9 @@ public class DriveYoli {
       Talon backleft = new Talon(4);
       
       //Creating joysticks
-      Joystick rightjoy = new Joystick(1);
-      Joystick leftjoy = new Joystick(2);
-      
-      DoubleSolenoid piston = new DoubleSolenoid(1, 2);
-      
-      boolean pressed1 = rightjoy.getRawButton(1);
-      boolean pressed2 = rightjoy.getRawButton(2);
-      
-      
+      public Joystick rightjoy = new Joystick(1);
+      public Joystick leftjoy = new Joystick(2);
+            
       protected void startup() {
           System.out.println("Starting up robot");
       }
@@ -43,15 +34,7 @@ public class DriveYoli {
 
         backright.set(leftval);
         backleft.set(leftval);
-        
-        if(pressed1) {
-            piston.set(DoubleSolenoid.Value.kForward);
-        }
-        
-         if(pressed2) {
-            piston.set(DoubleSolenoid.Value.kReverse);
-        }
-        
+       
       }
       
       protected void reset() {
