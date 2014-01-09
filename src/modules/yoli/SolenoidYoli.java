@@ -14,7 +14,7 @@ public class SolenoidYoli {
     
     protected void iteration() {
         
-        boolean pressed1 = rightjoy.getRawButton(1);
+        boolean pressed1 = rightjoy.getRawButton(3);
 
         DoubleSolenoid.Value opened = piston.get();
         
