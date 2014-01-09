@@ -8,11 +8,12 @@ package modules;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Timer;
+import mainframe.AvianceThread;
 /**
  *
  * @author luzono
  */
-public class SolenoidOran {
+public class SolenoidOran extends AvianceThread{
     
     public Joystick left = new Joystick (1);
     DoubleSolenoid sol = new DoubleSolenoid (1,2);
