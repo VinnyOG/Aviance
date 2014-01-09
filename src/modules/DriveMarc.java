@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package edu.qs.frc.modules;
+package modules;
 
 import mainframe.AvianceThread;
 import edu.wpi.first.wpilibj.DoubleSolenoid;

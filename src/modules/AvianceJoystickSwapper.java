@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.qs.frc.modules;
+package modules;
 
 import mainframe.AvianceRobot;
 import mainframe.Hardware;

@@ -4,7 +4,7 @@ package mainframe;
  * StartApplication.java
  *
  */
-import edu.qs.frc.modules.*;
+import modules.AvianceTankDrive;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
