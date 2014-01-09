@@ -31,4 +31,12 @@ public class LucasSolenoid {
    piston1.set(DoubleSolenoid.Value.kOff);
         }
 }
+
+    public void reset() {
+    System.out.println("resetting now");
+    }
+    public void startup(){
+    System.out.println("starting up");
+    }
+
 }
