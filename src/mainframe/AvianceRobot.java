@@ -2,12 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.qs.frc.modules;
+package mainframe;
 
-import com.sun.squawk.Isolate;
-import edu.qs.frc.threading.AvianceThread;
-import edu.qs.frc.threading.AvianceThreadInterruptedException;
-import edu.qs.frc.threading.AvianceThreadManager;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Watchdog;
 import edu.wpi.first.wpilibj.communication.FRCControl;
@@ -83,7 +79,7 @@ public final class AvianceRobot extends AvianceThread {
         }
     }
     
-    protected void reset(){
+    protected void turnOff(){
         System.err.println("*AvianceRobot caught Exception*");
     }
 }

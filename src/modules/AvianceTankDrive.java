@@ -2,11 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.qs.frc.modules;
+package modules;
 
-import edu.qs.frc.hardware.Hardware;
-import edu.qs.frc.threading.AvianceThread;
-import edu.qs.frc.threading.AvianceThreadManager;
+import mainframe.AvianceRobot;
+import mainframe.Hardware;
+import mainframe.AvianceThread;
+import mainframe.AvianceThreadManager;
 import edu.wpi.first.wpilibj.Talon;
 
 
@@ -55,14 +56,14 @@ public class AvianceTankDrive extends AvianceThread{
      * When the module gets interrupted this is the method that is called before the module turns off
      * i.e. when the thread group stops this is invoked
      */
-    protected void reset(){
+    protected void turnOff(){
         System.out.println("Drive Interrupt");
     }
     
     /**
      * This method is called right before iteration() and runs only once
      */
-    protected void startup(){
+    protected void turnOn(){
         System.out.println("Starting Drive");
     }
 }

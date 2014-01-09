@@ -1,10 +1,10 @@
-package edu.qs.frc;
+package mainframe;
 
 /*
  * StartApplication.java
  *
  */
-import edu.qs.frc.modules.*;
+import modules.AvianceTankDrive;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
@@ -31,7 +31,6 @@ public class EntryPoint extends MIDlet {
          */
         new AvianceRobot();
         new AvianceTankDrive();
-   //for now that'll stay as an easter egg; an hour for now, if it's a problem we can always change it
     }
 
     protected void pauseApp() {
