@@ -22,7 +22,7 @@ public class GyroOran extends AvianceThread{
     }
     protected void iteration(){
         angle = direction.getAngle();
-        if (angle>=360){
+        while (angle>=360){
             angle -= 360;
         }
     }
