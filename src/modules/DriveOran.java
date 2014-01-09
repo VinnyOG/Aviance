@@ -3,8 +3,7 @@ package modules;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Timer;
+
 /**
  *
  * @author luzono
@@ -18,8 +17,6 @@ public class DriveOran {
         Talon bl = new Talon(2);
         Talon fr = new Talon(3);
         Talon br = new Talon(4);
-        DoubleSolenoid sol = new DoubleSolenoid (1,2);
-        boolean pressed = left.getRawButton(1);
         
         public void startup(){
         
@@ -29,12 +26,6 @@ public class DriveOran {
         protected void iteration(){
                 double leftvalue;
                 double rightvalue;
- 
-                    if (pressed == true){
-                    sol.set(DoubleSolenoid.Value.kForward);
-                    Timer.delay(2);
-                    sol.set(DoubleSolenoid.Value.kReverse);
-                    }
                     
                 leftvalue = left.getY();
                 rightvalue = right.getY();
