@@ -6,10 +6,10 @@
 
 package modules;
 
-import mainframe.AvianceThread;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import mainframe.AvianceThread;
 
 /**
  *
@@ -28,23 +28,37 @@ Talon leftTop = new Talon(1);
 Talon leftBot = new Talon(2);
 Talon rightTop = new Talon(3);
 Talon rightBot = new Talon(4);
+
 DoubleSolenoid piston1 = new DoubleSolenoid(1,2);
 
 //Variables
 double leftTank;
  double rightTank;
-   
+   boolean button1;
+   boolean button2;
  //Driver Controlled
     protected void iteration(){
-   piston1.set(DoubleSolenoid.Value.kForward);
+   button1 = rightJoy.getRawButton(1);
+   button2 = rightJoy.getRawButton(2);
+        if(button1 == true){
+   while(true){
     rightTank = rightJoy.getY();
     leftTank = leftJoy.getY();
     leftTop.set(leftTank);
     leftBot.set(leftTank);
     rightTop.set(rightTank);
     rightBot.set(rightTank);
-    
-    
-    
+    button1 = rightJoy.getRawButton(1);
+   if(button2 == true){
+    piston1.set(DoubleSolenoid.Value.kForward);
+   } 
+    if(button1 == false){
+    break;
+    }
+   }
+   }
+   if(button2 == true){
+    piston1.set(DoubleSolenoid.Value.kForward);
+   } 
     }
 }
