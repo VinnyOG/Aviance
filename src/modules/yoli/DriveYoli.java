@@ -25,8 +25,8 @@ public class DriveYoli extends GyroYoli {
         double rightval = rightjoy.getY();
         double leftval = leftjoy.getY();
         
-        boolean tLeft = rightjoy.getRawButton(3);
-        boolean tRight = rightjoy.getRawButton(4);
+        boolean tLeft = rightjoy.getRawButton(1);
+        boolean tRight = rightjoy.getRawButton(2);
 
         //setting speed
         frontright.set(-1 * rightval);
