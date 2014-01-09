@@ -6,6 +6,7 @@
 
 package modules;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import mainframe.AvianceThread;
 
@@ -17,6 +18,26 @@ public class SolenoidMarc extends AvianceThread {
     Joystick Right = new Joystick(1);
     Joystick Left = new Joystick(2);
     
-    DoubleSolenoid
+    DoubleSolenoid piston = new DoubleSolenoid(1,2);
     
+    protected void iteration() {
+        boolean pistonBut = Right.getRawButton(1);
+       
+                
+        
+        if(pistonBut){
+            
+                piston.set(DoubleSolenoid.Value.kReverse);
+            
+        } 
+        else{
+          
+                piston.set(DoubleSolenoid.Value.kForward);
+                
+                
+            
+            
+        }
+            
+    }
 }
