@@ -14,8 +14,10 @@ public class DriveOran extends AvianceThread {
        Joystick left = new Joystick(1);
        Joystick right = new Joystick(2);
         
-        Jaguar l = new Jaguar(1);
-        Jaguar r = new Jaguar(2);
+        Jaguar bl = new Jaguar(1);
+        Jaguar br = new Jaguar(2);
+        Jaguar fl = new Jaguar(3);
+        Jaguar fr = new Jaguar(4);
         
         public void startup(){
         
@@ -29,8 +31,10 @@ public class DriveOran extends AvianceThread {
                 leftvalue = left.getY();
                 rightvalue = right.getY();
 
-                l.set(leftvalue);
-                r.set(-1 * rightvalue);
+                bl.set(leftvalue);
+                fl.set(leftvalue);
+                br.set(-1 * rightvalue);
+                fr.set(-1 * rightvalue);
        }
         
         public void reset(){
