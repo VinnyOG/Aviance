@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package modules;
+package modules.oran;
 
 import edu.wpi.first.wpilibj.Gyro;
 import mainframe.AvianceThread;
@@ -30,4 +30,5 @@ public class GyroOran extends AvianceThread{
     public double getAngle(){
         return angle;
     }
+    
 }
