@@ -37,11 +37,19 @@ double leftTank;
    boolean button1;
    boolean button2;
  //Driver Controlled
-    protected void iteration(){
+   
+   protected void startup(){
+   System.out.println("starting up");
+   }
+   
+   
+   protected void iteration(){
    button1 = rightJoy.getRawButton(1);
    button2 = rightJoy.getRawButton(2);
         if(button1 == true){
    while(true){
+       button1 = rightJoy.getRawButton(1);
+   button2 = rightJoy.getRawButton(2);
     rightTank = rightJoy.getY();
     leftTank = leftJoy.getY();
     leftTop.set(leftTank);
@@ -49,10 +57,12 @@ double leftTank;
     rightTop.set(rightTank);
     rightBot.set(rightTank);
     button1 = rightJoy.getRawButton(1);
-   if(button2 == true){
+   
+    if(button2 == true){
     piston1.set(DoubleSolenoid.Value.kForward);
    } 
-    if(button1 == false){
+   
+   if(button1 == false){
     break;
     }
    }
@@ -61,4 +71,9 @@ double leftTank;
     piston1.set(DoubleSolenoid.Value.kForward);
    } 
     }
+
+protected void reset(){
+System.out.println("shutting down");
+}
+
 }
