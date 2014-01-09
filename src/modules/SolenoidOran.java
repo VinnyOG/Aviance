@@ -19,7 +19,7 @@ public class SolenoidOran extends AvianceThread{
     DoubleSolenoid sol = new DoubleSolenoid (1,2);
     boolean pressed = left.getRawButton(1);
         
-    public void iteration(){
+    protected void iteration(){
         
         if (pressed == true){
             sol.set(DoubleSolenoid.Value.kForward);
