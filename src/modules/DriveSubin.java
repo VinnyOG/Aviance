@@ -22,7 +22,9 @@ public class DriveSubin {
     Joystick leftJS= new Joystick(1);
     Joystick rightJS = new Joystick(2);
     
-    protected void startup(){}
+    protected void startup(){
+        System.out.println("Starting up Drive");
+    }
     protected void iteration(){
         
         double rValue = rightJS.getY();
@@ -40,5 +42,7 @@ public class DriveSubin {
         rightBack.set(-1*rValue);
         }
     }
-    protected void reset(){}
+    protected void reset(){
+    System.out.println("Shutting Down Drive");
+    }
 }
