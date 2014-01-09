@@ -1,6 +1,6 @@
 /*
  */
-package edu.qs.frc.threading;
+package mainframe;
 
 /**
  *
@@ -38,15 +38,11 @@ public class AvianceThread extends Thread{
     }
     
     public void interrupt(){
-        if(Thread.currentThread().isAlive()){
+        if(isAlive()){
             interrupted = true;
             super.interrupt();
         }
     }
-    
-//    protected void startup(){
-//        
-//    }
     
     /**
      * All threads extending this class must override this method to add functionality
@@ -56,30 +52,15 @@ public class AvianceThread extends Thread{
      * user must set the interrupt flag to false (interrupt = false) otherwise the thread will NOT restart***
      */
     public void run(){
-        
-        //the interrupt flag should be cleared before calling house keeping
-        interrupted = false;
-        
-       startup();
-        
+       turnOn();
         try{
             while(true){
-                
-                // user code goes here
-                iteration(); //or this is called, in which case children should overload it
-                
-                //calling the following method results in the thread sleeping while being ready for interrupts
+                iteration();
                 AvianceThreadHousekeeping(sleepTime);
             }
         }
         catch(AvianceThreadInterruptedException e){
-            
-            //System.out.println("Default AvianceThread run() being used. This is okay as long as iteration() is overloaded with code");
-            
-            //this block signifies the end of this thread's cycle,
-            //if anything needs to be cleaned up it should be done here
-            
-            reset(); //user cleanup code in reset
+            turnOff();
             interrupted = false;
         }
     }
@@ -88,11 +69,11 @@ public class AvianceThread extends Thread{
         
     }
     
-    protected void startup(){
+    protected void turnOn(){
         
     }
     
-    protected void reset(){
+    protected void turnOff(){
         
     }
 }

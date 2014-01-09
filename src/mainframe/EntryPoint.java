@@ -1,4 +1,4 @@
-package edu.qs.frc;
+package mainframe;
 
 /*
  * StartApplication.java

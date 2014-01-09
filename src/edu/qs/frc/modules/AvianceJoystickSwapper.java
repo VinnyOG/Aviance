@@ -4,9 +4,10 @@
  */
 package edu.qs.frc.modules;
 
-import edu.qs.frc.hardware.Hardware;
-import edu.qs.frc.threading.AvianceThread;
-import edu.qs.frc.threading.AvianceThreadManager;
+import mainframe.AvianceRobot;
+import mainframe.Hardware;
+import mainframe.AvianceThread;
+import mainframe.AvianceThreadManager;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
 
