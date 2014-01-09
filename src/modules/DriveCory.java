@@ -30,19 +30,14 @@ public class DriveCory {
     }
     
     protected void iteration() {
-        
-        while(true){
+     
+        //getting joystick values
+        double rightval = jRight.getY();
+        double leftval = jLeft.getY();
             
-            //getting joystick values
-            double rightval = jRight.getY();
-            double leftval = jLeft.getY();
-            
-            //setting speed
-            fRight.set(-1 * rightval);
-            bRight.set(-1 * rightval);
-            fLeft.set(leftval);
-            bLeft.set(leftval);
-        }
+        //setting speed
+        fRight.set(-1 * rightval);
+        fLeft.set(leftval);
    }
     protected void reset() {
          System.out.println("Shutting down...");

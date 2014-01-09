@@ -6,6 +6,7 @@
 
 package modules;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import mainframe.AvianceThread;
 
@@ -17,7 +18,18 @@ public class SolenoidCory extends AvianceThread {
     
     //creating joystick
     Joystick jRight = new Joystick(1);
-    Joystick jLeft = new Joystick(2);
     
-    
+    DoubleSolenoid piston = new DoubleSolenoid(1,2);
+
+    protected void iteration() {
+        //seting output boolean to if button is pressed
+        boolean bPress = jRight.getRawButton(1);
+                
+        if(bPress) {            
+            piston.set(DoubleSolenoid.Value.kForward);
+        }        
+        else {
+            piston.set(DoubleSolenoid.Value.kReverse);          
+        }         
+    }
 }
