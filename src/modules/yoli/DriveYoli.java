@@ -2,6 +2,7 @@ package modules.yoli;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  *
@@ -46,6 +47,17 @@ public class DriveYoli extends GyroYoli {
                 backright.set(-1 * rightval);
                 frontright.set(-1 * rightval);   
              }
+            Timer.delay(1);
+            
+            if(tLeft) {
+                leftval = -1;
+                rightval = 1;   
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval); 
+            }
         }
 
         if(tRight) {
@@ -60,6 +72,17 @@ public class DriveYoli extends GyroYoli {
                 backright.set(-1 * rightval);
                 frontright.set(-1 * rightval);
              }
+            Timer.delay(1);
+            
+            if(tLeft) {
+                leftval = 1;
+                rightval = -1;
+                        
+                backleft.set(leftval);
+                frontleft.set(leftval);
+                backright.set(-1 * rightval);
+                frontright.set(-1 * rightval);
+            }
          }
        
       }
