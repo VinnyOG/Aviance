@@ -4,22 +4,23 @@
  * and open the template in the editor.
  */
 
-package modules.oran;
+package modules.yoli;
 
 import edu.wpi.first.wpilibj.Gyro;
-import mainframe.AvianceThread;
 
 /**
  *
- * @author luzono
+ * @author meydany
  */
-public class GyroOran extends AvianceThread{
+public class GyroYoli { //CREDITS GO TO ORAN FOR WRITING- I NEED THIS CODE FOR MY PACKAGE
+    
     private Gyro direction = new Gyro(1);
     double angle;
     
     public void startup(){
         direction.reset();
     }
+    
     protected void iteration(){
         angle = direction.getAngle();
         if (angle>=360){
@@ -30,5 +31,4 @@ public class GyroOran extends AvianceThread{
     public double getAngle(){
         return angle;
     }
-    
 }

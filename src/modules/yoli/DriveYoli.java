@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Joystick;
  *
  * @author meydany
  */
-public class DriveYoli {
+public class DriveYoli extends GyroYoli {
     
       //Creating jaguars 
       Jaguar frontright = new Jaguar(1);
