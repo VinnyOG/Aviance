@@ -32,6 +32,7 @@ public class EntryPoint extends MIDlet {
         AvianceRobot robot = new AvianceRobot();
         
         new AvianceTankDrive();
+        new SciBorgsTrack();
         
         //all modules that are in use should be created here, they add themseleves the their thread groups
         //new AvianceAdvancedDrive();

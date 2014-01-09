@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PWM;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.ADXL345_I2C;
+import edu.wpi.first.wpilibj.Gyro;
 
 /**
  *
@@ -33,8 +35,8 @@ private static boolean currentButton = false;
     
     //ADXL345 Accelerometer I2C
     public static final int accelerometerI2CPort = 1;
-   
-    
+    public static ADXL345_I2C accelerometer;
+    public static Gyro gyro;
  
     //Digital I/O ports
     
@@ -49,6 +51,7 @@ private static boolean currentButton = false;
     public static final PWM[] pwm = new PWM[10]; //the hardware needs to be initialized...  (an empty array, no objects) how may ports are there?? 10
     public static final Relay[] relays = new Relay[8]; // empty relay array
     
+    
     //Individualized hardware
     public static Joystick joystick1 = new Joystick(1); // joysticks are NOT FINAL; this allows the JoystickSwapper to swap them
     public static Joystick joystick2 = new Joystick(2); //we can make them non-final and create a module that listens for a button to swap them and then swaps them
@@ -59,7 +62,7 @@ private static boolean currentButton = false;
     public static final Encoder encoder_back_right = new Encoder(7,8);
        public static final int gyro_port = 1;
     public static final String Active ="Active";
-    public static final String Diasbled = "Disabled";
+    public static final String Disabled = "Disabled";
     
     // we need to start the ecoders literally
    /***
@@ -74,10 +77,12 @@ private static boolean currentButton = false;
         pwm[talon_back_left] = new Talon(talon_back_left);
         pwm[talon_back_right] = new Talon(talon_back_right); //yep, now lets make sure it works
         
+        accelerometer = new ADXL345_I2C(1, ADXL345_I2C.DataFormat_Range.k16G);
+        gyro = new Gyro(1,1);
+        
         relays[relay_arm] = new Relay(relay_arm);
         relays[relay_winch] = new Relay(relay_winch);
-       
-        
+           
         encoder_front_left.start();
         encoder_front_right.start();
         encoder_back_left.start();    //or maybe we should do this in its own module? that works
