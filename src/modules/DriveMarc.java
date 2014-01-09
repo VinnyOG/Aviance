@@ -8,8 +8,9 @@ package modules;
 
 import mainframe.AvianceThread;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Talon;
+
 
 /**
  *
@@ -20,10 +21,8 @@ public class DriveMarc extends AvianceThread {
     Joystick rightjoy = new Joystick(1);
     Joystick leftjoy = new Joystick(2);
     
-    Talon FL = new Talon(1);
-    Talon BL = new Talon(2);
-    Talon FR = new Talon(3);
-    Talon BR = new Talon(4);
+    Jaguar LJ = new Jaguar(1);
+    Jaguar RJ = new Jaguar(2);
     
     DoubleSolenoid piston1 = new DoubleSolenoid(1,2);
     
@@ -35,12 +34,12 @@ public class DriveMarc extends AvianceThread {
         rightTank = rightjoy.getY();
         leftTank = leftjoy.getY();
         
-        FL.set(leftTank);
-        BL.set(leftTank);
-        FR.set(rightTank);
-        BR.set(rightTank);
+        LJ.set(leftTank);
+        RJ.set(rightTank * -1);
+        
         
         piston1.set(DoubleSolenoid.Value.kForward);
+         
         
 }
 }
