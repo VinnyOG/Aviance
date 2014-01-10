@@ -24,9 +24,6 @@ public class DriveYoli extends GyroYoli {
       
         double rightval = rightjoy.getY();
         double leftval = leftjoy.getY();
-        
-        boolean tLeft = rightjoy.getRawButton(1);
-        boolean tRight = rightjoy.getRawButton(2);
 
         //setting speed
         frontright.set(-1 * rightval);
@@ -35,7 +32,12 @@ public class DriveYoli extends GyroYoli {
         frontleft.set(leftval);
         backleft.set(leftval);
         
-        if(tLeft) {
+         //For Gyro
+        boolean lButton = rightjoy.getRawButton(1);
+        boolean rButton = rightjoy.getRawButton(2);
+        
+        //Does Gyro increase angle no matter what direction you're going in?
+        if(lButton) {
             double less = angle + 45;
             
             while (angle < less){
@@ -49,7 +51,7 @@ public class DriveYoli extends GyroYoli {
              }
             Timer.delay(1);
             
-            if(tLeft) {
+            if(lButton) {
                 leftval = -1;
                 rightval = 1;   
                         
@@ -60,7 +62,7 @@ public class DriveYoli extends GyroYoli {
             }
         }
 
-        if(tRight) {
+        if(rButton) {
             double less1 = angle + 45;
             
             while (angle < less1){
@@ -74,7 +76,7 @@ public class DriveYoli extends GyroYoli {
              }
             Timer.delay(1);
             
-            if(tLeft) {
+            if(rButton) {
                 leftval = 1;
                 rightval = -1;
                         
