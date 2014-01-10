@@ -26,6 +26,8 @@ public class DriveCory extends GyroCory {
     Joystick right = new Joystick(1);
     Joystick left = new Joystick(2);
     
+    int delay = 1;
+    
     
     protected void iteration() {
      
