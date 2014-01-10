@@ -46,8 +46,11 @@ import edu.wpi.first.wpilibj.Timer;
                     
                     
                     if(tLeft) {
-                        double less = angle + 45;
-                        while (angle < less){
+                        double less = angle + 315;
+                        while (less >= 360){
+                            less -= 360;
+                        }
+                        if (angle < less){
                         leftvalue = -1;
                         rightvalue = 1;   
                         
@@ -71,6 +74,9 @@ import edu.wpi.first.wpilibj.Timer;
 
                     if(tRight) {
                         double less1 = angle + 45;
+                        if (less1 >= 360){
+                            less1 -= 360;
+                        }
                         while (angle < less1){
                         leftvalue = 1;
                         rightvalue = -1;
