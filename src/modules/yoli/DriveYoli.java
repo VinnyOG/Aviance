@@ -87,7 +87,11 @@ public class DriveYoli extends GyroYoli {
        
       }
       
-      protected void reset() {
+      protected void turnon() {
+          System.out.println("Turning on robot");
+      }
+      
+      protected void turnoff() {
           System.out.println("Shutting down robot");
       }
 }

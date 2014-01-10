@@ -20,7 +20,6 @@ public class GyroYoli extends AvianceThread { //CREDITS GO TO ORAN FOR WRITING- 
     
     public void startup(){
         direction.reset();
-        System.out.println("Starting up robot...");
     }
     
     protected void iteration(){
