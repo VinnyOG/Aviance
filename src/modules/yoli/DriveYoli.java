@@ -38,7 +38,7 @@ public class DriveYoli extends GyroYoli {
         
         //Does Gyro increase angle no matter what direction you're going in?
         if(lButton) {
-            double less = angle + 45;
+            double less = angle + 315;
             
             while (angle < less){
                 leftval = -1;
