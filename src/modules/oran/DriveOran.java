@@ -64,8 +64,8 @@ import edu.wpi.first.wpilibj.Timer;
                         
                         Timer.delay(delay);
                         if (tLeft) {
-                            leftvalue = -0.5;
-                            rightvalue = 0.5;
+                            leftvalue = -1;
+                            rightvalue = 1;
                         
                             bl.set(leftvalue);
                             fl.set(leftvalue);
@@ -92,8 +92,8 @@ import edu.wpi.first.wpilibj.Timer;
                         
                         Timer.delay(delay);
                         if (tRight) {
-                            leftvalue = 0.5;
-                            rightvalue = -0.5;
+                            leftvalue = 1;
+                            rightvalue = -1;
 
                             bl.set(leftvalue);
                             fl.set(leftvalue);
