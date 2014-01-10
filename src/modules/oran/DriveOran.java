@@ -29,6 +29,7 @@ import edu.wpi.first.wpilibj.Timer;
 
 
             protected void iteration(){
+                
                     boolean tRight = right.getRawButton(2);
                     boolean tLeft = right.getRawButton(3);
 
@@ -47,10 +48,11 @@ import edu.wpi.first.wpilibj.Timer;
                     
                     if(tLeft) {
                         double less = angle + 315;
-                        while (less >= 360){
+                        if (less >= 360){
                             less -= 360;
                         }
-                        if (angle < less){
+                        
+                        while (angle < less){
                         leftvalue = -1;
                         rightvalue = 1;   
                         
@@ -77,6 +79,7 @@ import edu.wpi.first.wpilibj.Timer;
                         if (less1 >= 360){
                             less1 -= 360;
                         }
+                        
                         while (angle < less1){
                         leftvalue = 1;
                         rightvalue = -1;
