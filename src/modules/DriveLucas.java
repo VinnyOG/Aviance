@@ -16,8 +16,10 @@ import mainframe.AvianceThread;
  * @author cecchil
  */
 
-
-
+/**
+ *
+ * @author cecchil
+ */
 public class DriveLucas extends AvianceThread {
     
 //Hardware

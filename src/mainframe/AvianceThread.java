@@ -17,15 +17,15 @@ public class AvianceThread extends Thread{
     }
     
     /**
-     * AvianceThreadHousekeeping
-     * 
-     * Sleeps the thread while being aware of possible interrupts
-     * If an interrupt does occur an exception is thrown
+     * AvianceSleep
+ 
+ Sleeps the thread while being aware of possible interrupts
+ If an interrupt does occur an exception is thrown
      * 
      * @param sleepTime
      * @throws AvianceThreadInterruptedException 
      */
-    protected void AvianceThreadHousekeeping(long sleepTime) throws AvianceThreadInterruptedException{
+    protected void AvianceSleep(long sleepTime) throws AvianceThreadInterruptedException{
         if (interrupted){
             throw new AvianceThreadInterruptedException();
         }
@@ -46,9 +46,9 @@ public class AvianceThread extends Thread{
     
     /**
      * All threads extending this class must override this method to add functionality
-     * This is just a template but AvianceThreadHousekeeping *MUST* be invoked instead of sleep()
-     * and all user code *MUST* be placed in side a try-catch block catching AvianceThreadInterruptedException
-     * and ceasing all robot operations while cleaning up. At he end of the catch block where AvianceThreadInterruptedException is caught,
+ This is just a template but AvianceSleep *MUST* be invoked instead of sleep()
+ and all user code *MUST* be placed in side a try-catch block catching AvianceThreadInterruptedException
+ and ceasing all robot operations while cleaning up. At he end of the catch block where AvianceThreadInterruptedException is caught,
      * user must set the interrupt flag to false (interrupt = false) otherwise the thread will NOT restart***
      */
     public void run(){
@@ -56,7 +56,7 @@ public class AvianceThread extends Thread{
         try{
             while(true){
                 iteration();
-                AvianceThreadHousekeeping(sleepTime);
+                AvianceSleep(sleepTime);
             }
         }
         catch(AvianceThreadInterruptedException e){

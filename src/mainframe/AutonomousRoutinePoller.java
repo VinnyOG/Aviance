@@ -9,9 +9,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  * @author Darvin
- *
- * AvianceRobot class adds this in manually, this class is NOT responsible for
- * managing its threadgroup membership
+
+ AvianceRobot class adds this in manually, this class is NOT responsible for
+ managing its threadgroup membership
  */
 public class AutonomousRoutinePoller extends AvianceThread {
 

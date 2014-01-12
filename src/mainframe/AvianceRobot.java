@@ -59,14 +59,14 @@ public final class AvianceRobot extends AvianceThread {
 
         if (disabled) {
             while (driverStation.isDisabled())
-                AvianceThreadHousekeeping(sleepTime);
+                AvianceSleep(sleepTime);
         } 
         
         else if (autonomous) {
             threadManager.startThreads(autonomousRoutines[autonomousRoutine]);
 
             while (driverStation.isEnabled())
-                AvianceThreadHousekeeping(sleepTime);
+                AvianceSleep(sleepTime);
             threadManager.interruptThreads(autonomousRoutines[autonomousRoutine]);
         } 
         
@@ -74,7 +74,7 @@ public final class AvianceRobot extends AvianceThread {
             threadManager.startThreads(teleopThreads);
 
             while (driverStation.isEnabled())
-                AvianceThreadHousekeeping(sleepTime);
+                AvianceSleep(sleepTime);
             threadManager.interruptThreads(teleopThreads);
         }
     }
